@@ -11,7 +11,7 @@ const HeroBanner = () => {
   const navigate = useNavigate();
   const { data, loading } = usefetch("/movie/upcoming");
   const { url } = useSelector((state) => state.home);
-  console.log(url);
+  // console.log(url);
   useEffect(() => {
     const bgImg =
       url.backdrop +
@@ -29,7 +29,7 @@ const HeroBanner = () => {
     <div className="heroBanner">
       {!loading && (
         <div className="backdrop-img">
-          <Img src={background} />
+          <Img src={background || "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} />
         </div>
       )}
       <div className="opacity-layer"></div>
@@ -50,6 +50,7 @@ const HeroBanner = () => {
           </div>
         </div>
       </ContentWrapper>
+      
     </div>
   );
 };

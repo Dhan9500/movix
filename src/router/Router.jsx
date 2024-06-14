@@ -15,8 +15,7 @@ export default function Router(){
         <Route path="/explore" element={<Explore />} />
         <Route path="/details" element={<Details />} />
         <Route path="/search/:query" element={<SearchResult />} />
-        <Route path="*" element={<Error />} />
-        
+        <Route path="*" element={<Error />} />  
       </Routes>
     </>
   );
