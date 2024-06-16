@@ -8,13 +8,6 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 function App() {
   const dispatch = useDispatch();
-  // const apiTesting = () => {
-  //   fetchDataFromApi("/movie/popular").then((res) => {
-  //     dispatch(getApiConfiguration(res));
-  //     dispatch(getGenres(res));
-  //   });
-  // };
-
   const fetchConfig = () => {
     fetchDataFromApi("/configuration").then((res) => {
       const url={

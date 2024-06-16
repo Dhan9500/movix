@@ -140,12 +140,14 @@
                     }
                 }
                 .genres {
-                    display: none;
+                    // display: none;
+                    font-size: 3px;
                     position: relative;
                     @include md {
                         display: flex;
                         flex-flow: wrap;
                         justify-content: flex-end;
+                        font-size: 12px;
                     }
                 }
             }
