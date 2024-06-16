@@ -53,7 +53,7 @@ body {
           rgba(#193763, 0.5) 60%,
           rgba(#193763, 0)
       );
-      animation: shimmer 2s infinite;
+      animation: rotate 0.5s infinite;
       content: "";
   }
 
@@ -61,5 +61,13 @@ body {
       100% {
           transform: translateX(100%);
       }
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }

@@ -96,7 +96,10 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                &:last-child {
+                &:nth-last-child(2) {
+                    display: none;
+                }
+                &:last-child{
                     display: none;
                 }
             }

@@ -8,6 +8,7 @@ import noResults from '../../assets/no-results.png'
 import Spinner from '../../components/spinner/Spinner'
 import Carousel from '../../components/carousel/Carousel'
 import MovieCard from '../../components/movieCard/MovieCard'
+import Img from '../../components/lazyLoadImage/Img'
 const SearchResult = () => {
   const [data,setData] =useState(null);
   const [loading,setLoading] =useState(false);
@@ -67,7 +68,7 @@ const SearchResult = () => {
                 }
                 </InfiniteScroll>
               </>
-            ):<></>
+            ):<Img src={noResults} />
           }
         </ContentWrapper>
       )
