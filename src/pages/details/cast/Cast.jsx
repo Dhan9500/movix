@@ -26,22 +26,22 @@ const Cast = ({ data, loading }) => {
         <div className="sectionHeading">Top Cast</div>
         {!loading ? (
           <div className="listItems">
-            {data.map((item) => {
+            {data?.map((item) => {
               let profileUrl = item?.profile_path
                 ? url.profile + item?.profile_path
                 : item?.gender === 1
                 ? avatargirl2
                 : avatar;
               return (
-                <div key={item.cast_id} className="listItem">
+                <div key={item?.cast_id} className="listItem">
                   <div className="profileImg">
                     <Img src={profileUrl} />
                   </div>
                   <div className="name">
-                    {item.name}
+                    {item?.name}
                   </div>
                   <div className="character">
-                    {item.character}
+                    {item?.character}
                   </div>
                 </div>
               );

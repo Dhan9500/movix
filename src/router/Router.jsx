@@ -12,7 +12,7 @@ export default function Router(){
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/explore" element={<Explore />} />
+        <Route path="/explore/:mediaType" element={<Explore />} />
         <Route path="/:mediaType/:id" element={<Details />} />
         <Route path="/search/:query" element={<SearchResult />} />
         <Route path="*" element={<Error />} />  
