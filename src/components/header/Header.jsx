@@ -3,11 +3,13 @@ import { HiOutlineSearch } from "react-icons/hi";
 import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate, useLocation } from "react-router-dom";
+import { IoHome } from "react-icons/io5";
 
 import "./style.scss";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import logo from "../../assets/movix-logo.svg";
+import headlogo from "../../assets/headlogo.png"
 
 const Header = () => {
     const [show, setShow] = useState("top");
@@ -75,6 +77,9 @@ const Header = () => {
               <img src={logo} alt=""/>
             </div>
             <ul className="menuItems">
+            <li className="menuItem">
+                <IoHome onClick={()=>navigate("/")}/>
+              </li>
               <li className="menuItem" onClick={()=>navigationHandler("movie")}>Movies</li>
               <li className="menuItem" onClick={()=>navigationHandler("tv")}>TV Shows</li>
               <li className="menuItem">
