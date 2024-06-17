@@ -8,8 +8,7 @@ import { IoHome } from "react-icons/io5";
 import "./style.scss";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import logo from "../../assets/movix-logo.svg";
-import headlogo from "../../assets/headlogo.png";
+
 
 const Header = () => {
   const [show, setShow] = useState("top");
@@ -69,8 +68,11 @@ const Header = () => {
   return (
     <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
       <ContentWrapper>
-        <div className="logo">
+        {/* <div className="logo">
           <img src={logo} alt="" />
+        </div> */}
+        <div className="headerText">
+          <h1>D-Cinema</h1>
         </div>
         <ul className="menuItems">
           <li className="menuItem" onClick={() => navigationHandler("movie")}>
