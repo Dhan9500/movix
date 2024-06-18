@@ -11,7 +11,6 @@ const HeroBanner = () => {
   const navigate = useNavigate();
   const { data, loading } = usefetch("/movie/upcoming");
   const { url } = useSelector((state) => state.home);
-  // console.log(url);
   useEffect(() => {
     const bgImg =
       url.backdrop +

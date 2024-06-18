@@ -22,7 +22,7 @@ const usefetch=(url)=>{
         })
         .catch((err)=>{
             setLoading(false);
-            setError("Something went wrong..."+err);
+            setError(true);
         })
     },[url]);
     return {data,loading,error};

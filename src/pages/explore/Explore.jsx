@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Select from "react-select";
 
@@ -10,7 +10,6 @@ import { fetchDataFromApi } from "../../utils/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
-
 let filters = {};
 
 const sortbyData = [
@@ -33,8 +32,9 @@ const Explore = () => {
     const [genre, setGenre] = useState(null);
     const [sortby, setSortby] = useState(null);
     const { mediaType } = useParams();
+    const navigate=useNavigate();
 
-    const { data: genresData } = useFetch(`/genre/${mediaType}/list`);
+    const { data: genresData,error } = useFetch(`/genre/${mediaType}/list`);
 
     const fetchInitialData = () => {
         setLoading(true);
@@ -42,7 +42,7 @@ const Explore = () => {
             setData(res);
             setPageNum((prev) => prev + 1);
             setLoading(false);
-        });
+        })
     };
 
     const fetchNextPageData = () => {
@@ -156,7 +156,9 @@ const Explore = () => {
                             </InfiniteScroll>
                         ) : (
                             <span className="resultNotFound">
-                                Sorry, Results not found!
+                                {
+                                    navigate('/error')
+                                }
                             </span>
                         )}
                     </>
