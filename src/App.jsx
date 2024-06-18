@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { fetchDataFromApi } from "./utils/api";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { getApiConfiguration, getGenres } from "./store/homeSlice";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, useNavigate } from "react-router-dom";
 import Router from "./router/Router";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import PageNotFound from "./pages/404/PageNotFound";
+
 function App() {
   const dispatch = useDispatch();
+  const navigate=useNavigate();
   const fetchConfig = () => {
     fetchDataFromApi("/configuration").then((res) => {
       const url={
@@ -16,9 +19,9 @@ function App() {
         profile:res.images.secure_base_url+'original',
       }
       dispatch(getApiConfiguration(url));
-    });
+    })
+    .catch(err=>navigate('/error'))
   };
-
   useEffect(() => {
     fetchConfig();
     genresCall();
@@ -39,11 +42,11 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <Router />
       <Footer/>
-    </BrowserRouter>
+    </>
   );
 }
 
