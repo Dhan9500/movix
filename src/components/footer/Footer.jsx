@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     FaFacebookF,
     FaInstagram,
@@ -11,15 +11,46 @@ import ContentWrapper from "../contentWrapper/ContentWrapper";
 
 import "./style.scss";
 import { Link } from "react-router-dom";
+import TermsPopUp from "../terms/TermsPopUp";
 
 const Footer = () => {
+    const [show, setShow] = useState(false);
+    const termsString = "This is Terms";
+    const privacyPolicyString = "This is Privacy Policy";
+    const aboutString = "This is About";
+    const [data, setData] = useState(null);
+
     return (
         <footer className="footer">
             <ContentWrapper>
                 <ul className="menuItems">
-                    <li className="menuItem">Terms Of Use</li>
-                    <li className="menuItem">Privacy-Policy</li>
-                    <li className="menuItem">About</li>
+                    <li
+                        className="menuItem"
+                        onClick={() => {
+                            setShow(true);
+                            setData(termsString);
+                        }}
+                    >
+                        Terms Of Use
+                    </li>
+                    <li
+                        className="menuItem"
+                        onClick={() => {
+                            setShow(true);
+                            setData(privacyPolicyString);
+                        }}
+                    >
+                        Privacy-Policy
+                    </li>
+                    <li
+                        className="menuItem"
+                        onClick={() => {
+                            setShow(true);
+                            setData(aboutString);
+                        }}
+                    >
+                        About
+                    </li>
                 </ul>
                 <div className="infoText">
                     Experience the magic of movies like never before at [Cinema
@@ -67,6 +98,12 @@ const Footer = () => {
                     </Link>
                 </div>
             </ContentWrapper>
+            <TermsPopUp
+                data={data}
+                setData={setData}
+                show={show}
+                setShow={setShow}
+            />
         </footer>
     );
 };
