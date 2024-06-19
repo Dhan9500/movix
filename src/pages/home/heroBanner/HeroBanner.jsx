@@ -16,7 +16,7 @@ const HeroBanner = () => {
       url.backdrop +
       data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
     setBackground(bgImg);
-  }, [data,navigate]);
+  }, [data, navigate]);
 
   const searchQueryHandler = (event) => {
     if (event.key === "Enter" && query.length > 0) {
@@ -31,15 +31,20 @@ const HeroBanner = () => {
     <div className="heroBanner">
       {!loading && (
         <div className="backdrop-img">
-          <Img src={background || "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} />
+          <Img
+            src={
+              background ||
+              "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            }
+          />
         </div>
       )}
       <div className="opacity-layer"></div>
       <ContentWrapper>
         <div className="heroBannerContent">
-          <span className="title">Welcome</span>
+          <span className="title">Welcome To D-Cinema</span>
           <span className="subtitle">
-            Millions of Movies, TV Shows and people to discover. Explore Now
+            Sit back, relax, and let the show begin!
           </span>
           <div className="searchInput">
             <input
@@ -48,11 +53,10 @@ const HeroBanner = () => {
               onChange={(e) => setQuery(e.target.value)}
               onKeyUp={searchQueryHandler}
             />
-            <button onClick={()=>searchQueryHandlerOnBtn()}>Search</button>
+            <button onClick={() => searchQueryHandlerOnBtn()}>Search</button>
           </div>
         </div>
       </ContentWrapper>
-      
     </div>
   );
 };
