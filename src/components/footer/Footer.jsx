@@ -15,10 +15,7 @@ import TermsPopUp from "../terms/TermsPopUp";
 
 const Footer = () => {
     const [show, setShow] = useState(false);
-    const termsString = "This is Terms";
-    const privacyPolicyString = "This is Privacy Policy";
-    const aboutString = "This is About";
-    const [data, setData] = useState(null);
+    const [id, setId] = useState(null);
 
     return (
         <footer className="footer">
@@ -28,7 +25,7 @@ const Footer = () => {
                         className="menuItem"
                         onClick={() => {
                             setShow(true);
-                            setData(termsString);
+                            setId(0);
                         }}
                     >
                         Terms Of Use
@@ -37,7 +34,7 @@ const Footer = () => {
                         className="menuItem"
                         onClick={() => {
                             setShow(true);
-                            setData(privacyPolicyString);
+                            setId(1);
                         }}
                     >
                         Privacy-Policy
@@ -46,15 +43,15 @@ const Footer = () => {
                         className="menuItem"
                         onClick={() => {
                             setShow(true);
-                            setData(aboutString);
+                            setId(2);
                         }}
                     >
                         About
                     </li>
                 </ul>
                 <div className="infoText">
-                    Experience the magic of movies like never before at [Cinema
-                    Name]. Whether you're a fan of blockbuster hits, indie gems,
+                    Experience the magic of movies like never before at D-Cinema.
+                    Whether you're a fan of blockbuster hits, indie gems,
                     or classic films, we have something for everyone. Enjoy our
                     state-of-the-art screens, immersive sound systems, and
                     comfortable seating for the ultimate movie-going experience.
@@ -99,8 +96,8 @@ const Footer = () => {
                 </div>
             </ContentWrapper>
             <TermsPopUp
-                data={data}
-                setData={setData}
+                id={id}
+                setId={setId}
                 show={show}
                 setShow={setShow}
             />

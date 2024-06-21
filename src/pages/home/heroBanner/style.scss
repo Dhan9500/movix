@@ -47,9 +47,9 @@
         text-align: center;
         position: relative;
         max-width: 800px;
-        margin: 58px auto;
+        margin: 62px auto;
         .title{
-            font-size: 37px;
+            font-size: 30px;
             font-weight: 680;
             margin-bottom: 10px;
             @include md{
@@ -58,7 +58,7 @@
             }
         }
         .subtitle{
-            font-size: 18px;
+            font-size: 13px;
             font-weight: 500;
             margin-bottom: 40px;
             @include md{

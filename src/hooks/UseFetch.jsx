@@ -10,7 +10,7 @@ const usefetch=(url)=>{
         setLoading(true);
         setError(null);
         setData(null);
-
+        
         fetchDataFromApi(url).then((res)=>{
             // setLoading(false);
             const setWrap=()=>{
