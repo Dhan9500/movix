@@ -85,13 +85,13 @@ const Header = () => {
             <IoHome/>
           </li>
           <li className="menuItem">
-            <HiOutlineSearch onClick={() => openSearch()} />
+            <HiOutlineSearch style={{display:none}} onClick={() => openSearch()} />
           </li>
           
         </ul>
         <div className="mobileMenuItems">
           <IoHome onClick={() => navigate("/")} />
-          <HiOutlineSearch onClick={() => openSearch()} />
+          <HiOutlineSearch style={{display:none}} onClick={() => openSearch()} />
           {mobileMenu ? (
             <VscChromeClose onClick={() => setMobileMenu(false)} />
           ) : (
