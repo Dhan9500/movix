@@ -52,6 +52,7 @@
             font-size: 30px;
             font-weight: 680;
             margin-bottom: 10px;
+            text-wrap: nowrap;
             @include md{
                 font-size: 90px;
                 margin-bottom: 0;
